@@ -2,6 +2,7 @@
 
 namespace GameOfTheGoose;
 
+use Exception;
 use GameOfTheGoose\Exception\TileNotFoundException;
 
 class Player
@@ -45,6 +46,24 @@ class Player
         $playerList->addPlayerName($this->name);
 
         return $playerList;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param Exception $exception
+     *
+     * @return string
+     */
+    public function exceptionDescription(Exception $exception)
+    {
+        return str_replace('%%NAME%%', $this->name, $exception->getMessage());
     }
 
     /**

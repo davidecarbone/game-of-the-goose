@@ -62,8 +62,8 @@ class Game
      */
     public function addPlayer(Player $player)
     {
-        if ($playerName = $this->playerExists($player)) {
-            throw new PlayerExistsException("Giocatore già esistente: " . $playerName);
+        if ($this->playerExists($player)) {
+            throw new PlayerExistsException("Giocatore già esistente: %%NAME%%");
         }
 
         $this->players[$this->getPlayersCount()+1] = $player;

@@ -10,48 +10,35 @@ require 'vendor/autoload.php';
 echo "\nGame of the Goose\n\n";
 
 // Create game and board
-$playerList = new PlayerList();
 $board = new Board(10);
+$playerList = new PlayerList();
 $game = new Game($playerList, $board);
 
-// Add players
-try {
-    $player1 = new Player('Davide');
-    $player2 = new Player('Loris');
-    addPlayer($game, $player1, $playerList);
-    addPlayer($game, $player2, $playerList);
-} catch (PlayerExistsException $e) {
-    System::broadCastMessage($e->getMessage());
-}
+$input = new Input();
+$output = new Output();
+$commandConsole = new CommandConsole($input, $output);
 
-echo "List of players:\n";
-echo $playerList->toString("\n");
-echo "\n";
+while ($choice = trim($commandConsole->choose())) {
+    switch ($choice) {
+        case 1:
+            $playerName = $commandConsole->insertPlayer();
+            $player = new Player($playerName);
 
-// Move players
-/*try {
-    $player1->moveTo(3);
-} catch (TileNotFoundException $e) {
-    System::broadCastMessage($e->getMessage());
-}*/
+            try {
+                $game->addPlayer($player);
+            } catch (PlayerExistsException $exception) {
+                $commandConsole->printError($player->exceptionDescription($exception));
+            }
+            break;
 
+        case 2:
+            // TODO commandConsole method for list
+            echo "List of players:\n";
+            echo $playerList->toString("\n");
+            echo "\n";
+            break;
 
-
-
-/**
- * @param Game   $game
- * @param Player $player
- * @param PlayerList $playerList
- */
-function addPlayer(Game $game, Player $player, PlayerList $playerList)
-{
-    if ($game->addPlayer($player)) {
-        System::broadCastMessage('Giocatori: ' . $playerList->toString(', '));
+        default:
+            // exit
     }
-}
-
-function movePlayer(Player $player, $position)
-{
-    $player->moveTo($position);
-    System::broadCastMessage("");
 }
