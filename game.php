@@ -32,10 +32,7 @@ while ($choice = trim($commandConsole->choose())) {
             break;
 
         case 2:
-            // TODO commandConsole method for list
-            echo "List of players:\n";
-            echo $playerList->toString("\n");
-            echo "\n";
+            $commandConsole->displayPlayerList($playerList);
             break;
 
         default:

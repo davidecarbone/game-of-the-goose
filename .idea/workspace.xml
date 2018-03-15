@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58e0b448-034d-4437-a75c-cc9636e063ba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CommandConsole.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/System.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game.php" afterPath="$PROJECT_DIR$/game.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game.php" afterPath="$PROJECT_DIR$/src/Game.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Player.php" afterPath="$PROJECT_DIR$/src/Player.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CommandConsole.php" afterPath="$PROJECT_DIR$/src/CommandConsole.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Output.php" afterPath="$PROJECT_DIR$/src/Output.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,14 +39,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/game.php">
+      <file leaf-file-name="PlayerList.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PlayerList.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="775">
-              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding>
-                <element signature="e#34#85#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="333">
+              <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,11 +61,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandConsole.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="game.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="489">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="e#34#85#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandConsole.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CommandConsole.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+            <state relative-caret-position="260">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -110,18 +118,18 @@
         <option value="$PROJECT_DIR$/src/Tile.php" />
         <option value="$PROJECT_DIR$/src/Board.php" />
         <option value="$PROJECT_DIR$/Test/PlayerTest.php" />
-        <option value="$PROJECT_DIR$/src/PlayerList.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/phpunit.xml" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/Test/GameTest.php" />
         <option value="$PROJECT_DIR$/src/System.php" />
         <option value="$PROJECT_DIR$/src/Input.php" />
-        <option value="$PROJECT_DIR$/src/Output.php" />
-        <option value="$PROJECT_DIR$/src/CommandConsole.php" />
         <option value="$PROJECT_DIR$/src/Game.php" />
         <option value="$PROJECT_DIR$/src/Player.php" />
+        <option value="$PROJECT_DIR$/src/PlayerList.php" />
+        <option value="$PROJECT_DIR$/src/Output.php" />
         <option value="$PROJECT_DIR$/game.php" />
+        <option value="$PROJECT_DIR$/src/CommandConsole.php" />
       </list>
     </option>
   </component>
@@ -310,12 +318,12 @@
       <workItem from="1519474359390" duration="6367000" />
       <workItem from="1519636782240" duration="8000" />
       <workItem from="1519721193741" duration="6357000" />
-      <workItem from="1521106259863" duration="5868000" />
+      <workItem from="1521106259863" duration="6984000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27834000" />
+    <option name="totallyTimeSpent" value="28950000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-4" width="1311" height="772" extended-state="6" />
@@ -670,14 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PlayerList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test/GameTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -685,30 +685,6 @@
           <folding>
             <element signature="e#39#70#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Input.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Output.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CommandConsole.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -730,13 +706,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/PlayerList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Output.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Input.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/game.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="489">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="e#34#85#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CommandConsole.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

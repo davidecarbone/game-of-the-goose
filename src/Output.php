@@ -6,6 +6,6 @@ class Output
 {
     public function printMessage($message)
     {
-        echo $message . "\n";
+        echo $message , PHP_EOL;
     }
 }
