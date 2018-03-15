@@ -1,0 +1,7 @@
+<phpunit bootstrap="Test/bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="Goose Game">
+            <directory>tests/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
