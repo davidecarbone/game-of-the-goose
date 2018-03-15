@@ -1,11 +1,14 @@
 {
     "name": "root/game_of_the_goose",
     "require": {
-        "phpunit/phpunit": "^5.0"
+        "php": "5.3.29"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
     },
     "autoload": {
         "psr-4": {"": "src/"}
-    }
+    },
     "authors": [
         {
             "name": "Davide Carbone",
