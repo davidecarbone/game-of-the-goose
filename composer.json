@@ -7,7 +7,7 @@
         "phpunit/phpunit": "^4.8"
     },
     "autoload": {
-        "psr-4": {"": "src/"}
+        "psr-4": {"GameOfTheGoose\\": "src/"}
     },
     "authors": [
         {

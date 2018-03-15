@@ -1,7 +1,7 @@
 <phpunit bootstrap="Test/bootstrap.php" colors="true">
     <testsuites>
         <testsuite name="Goose Game">
-            <directory>tests/</directory>
+            <directory>Test/</directory>
         </testsuite>
     </testsuites>
 </phpunit>

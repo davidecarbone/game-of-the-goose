@@ -38,10 +38,11 @@ class GameTest extends TestCase
         $this->assertEquals(2, $this->game->getPlayersCount());
     }
 
+    /**
+     * @expectedException \GameOfTheGoose\Exception\PlayerExistsException
+     */
     public function testPlayerWithExistingNameMustNotBeAddable()
     {
-        $this->expectException(PlayerExistsException::class);
-
         $this->game->addPlayer(new Player('Davide'));
         $this->game->addPlayer(new Player('Davide'));
 
