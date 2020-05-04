@@ -2,16 +2,16 @@
 
 namespace GameOfTheGoose;
 
-class PlayerList
+final class PlayerList
 {
-    private $playerNames = array();
+    private $playerNames = [];
 
     /**
      * @param string $name
      *
      * @return array
      */
-    public function addPlayerName($name)
+    public function addPlayerName(string $name): array
     {
         $this->playerNames[] = $name;
 
@@ -23,7 +23,7 @@ class PlayerList
      *
      * @return string
      */
-    public function toString($separator)
+    public function toList(string $separator): string
     {
         return implode($separator, $this->playerNames);
     }

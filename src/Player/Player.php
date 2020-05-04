@@ -1,11 +1,12 @@
 <?php
 
-namespace GameOfTheGoose;
+namespace GameOfTheGoose\Player;
 
 use Exception;
-use GameOfTheGoose\Exception\TileNotFoundException;
+use GameOfTheGoose\Tile\TileNotFoundException;
+use GameOfTheGoose\PlayerList;
 
-class Player
+final class Player
 {
     /* @var string */
     private $name;
@@ -16,7 +17,7 @@ class Player
     /**
      * @param string $name
      */
-    public function __construct($name)
+    public function __construct(string $name)
     {
         $this->name = $name;
         $this->currentPosition = 1;
@@ -51,7 +52,7 @@ class Player
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->name;
     }

@@ -2,7 +2,7 @@
 
 namespace GameOfTheGoose;
 
-class CommandConsole
+final class CommandConsole
 {
     private $input;
     private $output;
@@ -17,37 +17,35 @@ class CommandConsole
         $this->output = $output;
     }
 
-    public function choose()
+    public function mainMenu()
     {
-        $this->output->printMessage("Scegli operazione: ");
+        $this->output->printMessage("Scegli operazione:");
         $this->output->printMessage("1: Inserisci nuovo giocatore");
         $this->output->printMessage("2: Lista dei giocatori");
 
         return $this->input->read();
     }
 
-    /**
-     */
     public function insertPlayer()
     {
-        $this->output->printMessage("Nome giocatore: ");
+        $this->output->printMessage("Nome giocatore:");
 
         return trim($this->input->read());
     }
 
     /**
-     * @param PlayerList $playerList
+     * @param string $playerList
      */
-    public function displayPlayerList(PlayerList $playerList)
+    public function displayPlayerList(string $playerList)
     {
         $this->output->printMessage("Lista dei giocatori:");
-        $this->output->printMessage($playerList->toString(PHP_EOL));
+        $this->output->printMessage($playerList);
     }
 
     /**
-     * @param $message
+     * @param string $message
      */
-    public function printError($message)
+    public function printError(string $message)
     {
         $this->output->printMessage($message);
     }

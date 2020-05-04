@@ -1,6 +1,6 @@
 <?php
 
-namespace GameOfTheGoose\Exception;
+namespace GameOfTheGoose\Tile;
 
 use Exception;
 

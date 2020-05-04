@@ -5,29 +5,27 @@ namespace GameOfTheGoose\Test;
 use PHPUnit\Framework\TestCase;
 use GameOfTheGoose\Board;
 use GameOfTheGoose\Game;
-use GameOfTheGoose\Player;
-use GameOfTheGoose\PlayerList;
-use GameOfTheGoose\Exception\PlayerExistsException;
+use GameOfTheGoose\Player\Player;
+use GameOfTheGoose\Player\PlayerExistsException;
 
 class GameTest extends TestCase
 {
-    /* @var Game $game */
+    /* @var Game */
     private $game;
 
     public function setUp()
     {
         parent::setUp();
 
-        $playerList = new PlayerList();
-        $board = new Board(10);
-        $this->game = new Game($playerList, $board);
+        $board = Board::withTileCount(10);
+        $this->game = new Game($board);
     }
 
     public function testAddPlayer()
     {
         $this->game->addPlayer(new Player('Davide'));
 
-        $this->assertEquals(1, $this->game->getPlayersCount());
+        $this->assertEquals(1, $this->game->playersCount());
     }
 
     public function testAddTwoPlayers()
@@ -35,17 +33,16 @@ class GameTest extends TestCase
         $this->game->addPlayer(new Player('Davide'));
         $this->game->addPlayer(new Player('Loris'));
 
-        $this->assertEquals(2, $this->game->getPlayersCount());
+        $this->assertEquals(2, $this->game->playersCount());
     }
 
-    /**
-     * @expectedException \GameOfTheGoose\Exception\PlayerExistsException
-     */
     public function testPlayerWithExistingNameMustNotBeAddable()
     {
+		$this->setExpectedException(PlayerExistsException::class);
+
         $this->game->addPlayer(new Player('Davide'));
         $this->game->addPlayer(new Player('Davide'));
 
-        $this->assertEquals(2, $this->game->getPlayersCount());
+        $this->assertEquals(2, $this->game->playersCount());
     }
 }

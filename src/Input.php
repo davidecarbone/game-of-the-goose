@@ -2,7 +2,7 @@
 
 namespace GameOfTheGoose;
 
-class Input
+final class Input
 {
     public function read()
     {

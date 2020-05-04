@@ -2,7 +2,7 @@
 
 namespace GameOfTheGoose;
 
-class Output
+final class Output
 {
     public function printMessage($message)
     {

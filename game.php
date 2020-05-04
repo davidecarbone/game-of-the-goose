@@ -2,23 +2,21 @@
 
 namespace GameOfTheGoose;
 
-use GameOfTheGoose\Exception\PlayerExistsException;
-use GameOfTheGoose\Exception\TileNotFoundException;
+use GameOfTheGoose\Player\Player;
+use GameOfTheGoose\Player\PlayerExistsException;
 
 require 'vendor/autoload.php';
 
 echo "\nGame of the Goose\n\n";
 
-// Create game and board
-$board = new Board(10);
-$playerList = new PlayerList();
-$game = new Game($playerList, $board);
+$board = Board::withTileCount(10);
+$game = new Game($board);
 
 $input = new Input();
 $output = new Output();
 $commandConsole = new CommandConsole($input, $output);
 
-while ($choice = trim($commandConsole->choose())) {
+while ($choice = trim($commandConsole->mainMenu())) {
     switch ($choice) {
         case 1:
             $playerName = $commandConsole->insertPlayer();
@@ -27,12 +25,12 @@ while ($choice = trim($commandConsole->choose())) {
             try {
                 $game->addPlayer($player);
             } catch (PlayerExistsException $exception) {
-                $commandConsole->printError($player->exceptionDescription($exception));
+                $commandConsole->printError($exception->getMessage());
             }
             break;
 
         case 2:
-            $commandConsole->displayPlayerList($playerList);
+            $commandConsole->displayPlayerList($game->playerList());
             break;
 
         default:

@@ -2,21 +2,27 @@
 
 namespace GameOfTheGoose;
 
-class Board
+use GameOfTheGoose\Tile\Tile;
+
+final class Board
 {
     /* @var Tile[] */
     private $tiles;
 
-    /**
-     * @param int $tileCount
-     */
-    public function __construct($tileCount)
+    public static function withTileCount(int $tileCount): self
+    {
+	    $board = new self();
+
+	    for ($i = 1; $i <= $tileCount; $i++) {
+		    $board->tiles[$i] = new Tile($i);
+	    }
+
+	    return $board;
+    }
+
+    private function __construct()
     {
         $this->tiles = array();
-
-        for ($i = 1; $i <= $tileCount; $i++) {
-            $this->tiles[$i] = new Tile($i);
-        }
     }
 
     /**
@@ -26,7 +32,7 @@ class Board
      *
      * @return bool
      */
-    public function tileExists($tilePosition)
+    public function tileExists(int $tilePosition)
     {
         return isset($this->tiles[$tilePosition]);
     }

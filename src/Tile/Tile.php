@@ -1,6 +1,6 @@
 <?php
 
-namespace GameOfTheGoose;
+namespace GameOfTheGoose\Tile;
 
 class Tile
 {

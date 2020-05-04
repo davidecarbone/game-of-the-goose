@@ -2,43 +2,48 @@
 
 namespace GameOfTheGoose;
 
-use GameOfTheGoose\Exception\PlayerExistsException;
+use GameOfTheGoose\Player\Player;
+use GameOfTheGoose\Player\PlayerExistsException;
 
-class Game
+final class Game
 {
     /* @var Board */
     private $board;
 
-    /* @var Player[] $players */
+    /* @var Player[] */
     private $players;
 
-    /* @var PlayerList $playerList */
+    /* @var PlayerList */
     private $playerList;
 
     /**
-     * @param PlayerList $playerList
      * @param Board $board
      */
-    public function __construct(PlayerList $playerList, Board $board)
+    public function __construct(Board $board)
     {
-        $this->playerList = $playerList;
         $this->board = $board;
-        $this->players = array();
+        $this->players = [];
+        $this->playerList = new PlayerList();
     }
 
     /**
-     * Get the number of players in game.
-     *
      * @return int
      */
-    public function getPlayersCount()
+    public function playersCount(): int
     {
         return count($this->players);
     }
 
+
+	/**
+	 * @return string
+	 */
+	public function playerList(): string
+	{
+		return $this->playerList->toList(PHP_EOL);
+	}
+
     /**
-     * Get the current position of all players.
-     *
      * @return array
      */
     /*public function getPlayerPositions()
@@ -53,33 +58,26 @@ class Game
     }*/
 
     /**
-     * Add a player to the game.
-     *
      * @param Player $player
      *
-     * @return bool
      * @throws PlayerExistsException
      */
     public function addPlayer(Player $player)
     {
         if ($this->playerExists($player)) {
-            throw new PlayerExistsException("Giocatore già esistente: %%NAME%%");
+            throw new PlayerExistsException((string)$player);
         }
 
-        $this->players[$this->getPlayersCount()+1] = $player;
+        $this->players[$this->playersCount()] = $player;
         $player->addToList($this->playerList);
-
-        return true;
     }
 
     /**
-     * Check whether a player exists.
-     *
      * @param Player $newPlayer
      *
      * @return bool
      */
-    private function playerExists(Player $newPlayer)
+    private function playerExists(Player $newPlayer): bool
     {
         foreach ($this->players as $number => $player) {
             if ($newPlayer->isEqualTo($player)) {
@@ -89,4 +87,5 @@ class Game
 
         return false;
     }
+
 }
